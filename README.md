@@ -1,4 +1,4 @@
-# [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane4.svg)](https://chocolatey.org/packages/dashlane4)chocolatey-dashlane
+# [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane4.svg)](https://chocolatey.org/packages/dashlane4) chocolatey-dashlane
 
 Never forget another password with the all-new Dashlane 4.
 Keep track of your passwords. Automatically log in on every website and every device.
