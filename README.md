@@ -5,7 +5,7 @@ Keep track of your passwords. Automatically log in on every website and every de
 
 ## Installation
 
-    > choco install dashlane
+    > choco install dashlane4
 
 ## License
 
