@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dashlane</id>
+    <title>dashlane</title>
+    <version>4.1.1.10306</version>
+    <authors>dashlane</authors>
+    <owners>Andreas Niedermair</owners>
+    <description>Never forget another password with the all-new Dashlane 4.
+Keep track of your passwords. Automatically log in on every website and every device.</description>
+    <projectUrl>https://www.dashlane.com/</projectUrl>
+    <packageSourceUrl>https://github.com/dittodhole/chocolatey-dashlane</packageSourceUrl>
+    <tags>dashlane</tags>
+    <copyright>© Dashlane, Inc</copyright>
+    <iconUrl>https://raw.githubusercontent.com/dittodhole/chocolatey-dashlane/master/assets/icon256.png</iconUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
