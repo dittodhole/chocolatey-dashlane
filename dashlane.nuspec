@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>dashlane4</id>
-    <title>dashlane4</title>
+    <id>dashlane</id>
+    <title>dashlane</title>
     <version>4.1.1.10306</version>
     <authors>dashlane</authors>
     <owners>Andreas Niedermair</owners>
