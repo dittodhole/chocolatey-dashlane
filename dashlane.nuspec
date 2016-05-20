@@ -10,7 +10,7 @@
 Keep track of your passwords. Automatically log in on every website and every device.</description>
     <projectUrl>https://www.dashlane.com/</projectUrl>
     <packageSourceUrl>https://github.com/dittodhole/chocolatey-dashlane</packageSourceUrl>
-	<licenseUrl>https://www.dashlane.com/terms</licenseUrl>
+    <licenseUrl>https://www.dashlane.com/terms</licenseUrl>
     <tags>dashlane admin</tags>
     <copyright>© Dashlane, Inc</copyright>
     <iconUrl>https://raw.githubusercontent.com/dittodhole/chocolatey-dashlane/master/assets/icon256.png</iconUrl>
