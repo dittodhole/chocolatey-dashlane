@@ -4,9 +4,9 @@
 > Never forget another password with the all-new Dashlane 4.
 > Keep track of your passwords. Automatically log in on every website and every device.
 
-## Installation [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane)
+## Installation
 
-https://chocolatey.org/packages/dashlane
+ [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane.svg?style=flat-square)](https://chocolatey.org/packages/dashlane) https://chocolatey.org/packages/dashlane
 
     > choco install dashlane
 
@@ -27,4 +27,4 @@ The actual (un)installation is done in *.ps1*-files:
 
 ## License
 
-chocolatey-dashlane is published under [WTFNMFPLv3](https://andreas.niedermair.name/introducing-wtfnmfplv3).
+chocolatey-dashlane is published under [WTFNMFPLv3](https://andreas.niedermair.name/introducing-wtfnmfplv3)
