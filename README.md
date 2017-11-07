@@ -1,7 +1,7 @@
 ![](assets/icon256.png)
 
 # chocolatey-dashlane
-> Never forget another password
+> Never forget another password  
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
 ## Installation
