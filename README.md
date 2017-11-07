@@ -1,8 +1,8 @@
 ![](assets/icon256.png)
 
 # chocolatey-dashlane
-> Never forget another password with the all-new Dashlane 4.
-> Keep track of your passwords. Automatically log in on every website and every device.
+> Never forget another password
+> Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
 ## Installation
 

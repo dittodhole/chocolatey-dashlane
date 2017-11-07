@@ -6,8 +6,8 @@
     <version>5.0.0.10636</version>
     <authors>dashlane</authors>
     <owners>Andreas Niedermair</owners>
-    <description>Never forget another password with the all-new Dashlane 4.
-Keep track of your passwords. Automatically log in on every website and every device.</description>
+    <description>Never forget another password
+Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.</description>
     <projectUrl>https://www.dashlane.com/</projectUrl>
     <packageSourceUrl>https://github.com/dittodhole/chocolatey-dashlane</packageSourceUrl>
     <licenseUrl>https://www.dashlane.com/terms</licenseUrl>
