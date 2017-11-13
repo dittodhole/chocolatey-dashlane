@@ -12,6 +12,7 @@ Never misplaced. Never forgotten. Dashlane securely remembers all of your passwo
     <packageSourceUrl>https://github.com/dittodhole/chocolatey-dashlane</packageSourceUrl>
     <licenseUrl>https://www.dashlane.com/terms</licenseUrl>
     <tags>dashlane admin</tags>
+    <summary>Dashlane is a password manager app and secure digital wallet.</summary>
     <copyright>© Dashlane, Inc</copyright>
     <iconUrl>https://raw.githubusercontent.com/dittodhole/chocolatey-dashlane/master/assets/icon256.png</iconUrl>
   </metadata>
