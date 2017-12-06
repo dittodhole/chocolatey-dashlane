@@ -6,7 +6,7 @@
 
 ## Installation
 
- [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane.svg?style=flat-square)](https://chocolatey.org/packages/dashlane) https://chocolatey.org/packages/dashlane
+ [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane) https://chocolatey.org/packages/dashlane
 
     > choco install dashlane
 
@@ -27,4 +27,4 @@ The actual (un)installation is done in *.ps1*-files:
 
 ## License
 
-chocolatey-dashlane is published under [WTFNMFPLv3](https://andreas.niedermair.name/introducing-wtfnmfplv3)
+chocolatey-dashlane is published under [WTFNMFPLv3](https://andreas.niedermair.name/introducing-wtfnmfplv3).
