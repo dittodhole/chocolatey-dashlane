@@ -27,4 +27,4 @@ The actual (un)installation is done in *.ps1*-files:
 
 ## License
 
-chocolatey-dashlane is published under [WTFNMFPLv3](https://andreas.niedermair.name/introducing-wtfnmfplv3).
+chocolatey-dashlane is published under [WTFNMFPLv3](https://github.com/dittodhole/WTFNMFPLv3).
