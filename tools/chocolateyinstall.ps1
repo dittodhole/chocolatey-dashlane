@@ -13,3 +13,10 @@ Install-ChocolateyPackage -PackageName "$packageName" `
                           -ValidExitCodes $validExitCodes `
                           -Checksum "$checksum" `
                           -ChecksumType "$checksumType"
+
+Start-Sleep -Seconds 20
+
+Get-Process -Name "Dashlane*" | foreach {
+  Write-Host "Stopping $($_.ProcessName) process ($($_.Id)) ..."
+  Stop-Process $_
+}
