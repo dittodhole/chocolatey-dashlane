@@ -1,8 +1,8 @@
 ﻿$packageName = 'dashlane'
 $installerType = 'exe'
 $silentArgs = '/SD'
-$url = 'https://d3qm0vl2sdkrc.cloudfront.net/releases/5.6.0/5.6.0.15520/release/DashlaneInst.exe'
-$checksum = 'a200eed235bc59810b35bff27636312d52c01796'
+$url = 'https://d3qm0vl2sdkrc.cloudfront.net/releases/5.8.0/5.8.0.17084/release/DashlaneInst.exe'
+$checksum = 'f6ea710aac2fb4464dec25b71d3279104e332e41'
 $checksumType = 'sha1'
 $validExitCodes = @(0,1223)
 
