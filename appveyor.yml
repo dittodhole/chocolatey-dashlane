@@ -5,6 +5,10 @@ branches:
   only:
     - master
     - develop
+only_commits:
+  files:
+    - build/*
+    - src/*
 before_build:
 - cmd: cd build
 - cmd: npm install
