@@ -16,22 +16,16 @@
 > cd chocolatey-dashlane/
 ```
 
-When forging a new release, following properties need to be adjusted:
-
-- [package.json](package.json) - `/version`
-- [dashlane.nuspec](dashlane.nuspec) - `/package/metadata/version`
-- [tools/chocolateyinstall.ps1](tools/chocolateyinstall.ps1) - `$url` and `$checksum`
-
-### Building
+### Building & Publishing
 
 ```cmd
 chocolatey-dashlane> npm run-script build
 ```
 
-### Publishing
+To solely fetch the new version, run:
 
 ```cmd
-chocolatey-dashlane> npm run-script deploy
+chocolatey-dashlane> npm run-script prebuild
 ```
 
 ## Contributors
