@@ -11,18 +11,28 @@
 
 ## Developing
 
-Open [dashlane.nuspec](dashlane.nuspec) with the editor of your choice, to edit the package defintion.
+```cmd
+> git clone https://github.com/dittodhole/chocolatey-dashlane.git
+> cd chocolatey-dashlane/
+```
+
+Open [dashlane.nuspec](dashlane.nuspec) with the editor of your choice, to edit the package definition.
 
 The actual (un)installation is done in *.ps1*-files:
 
 - [tools/chocolateyinstall.ps1](tools/chocolateyinstall.ps1)
 - [tools/chocolateyuninstall.ps1](tools/chocolateyuninstall.ps1)
 
+### Building
+
+```cmd
+chocolatey-dashlane> npm run-script build
+```
+
 ### Publishing
 
 ```cmd
-> npm run-script build
-> npm run-script deploy
+chocolatey-dashlane> npm run-script deploy
 ```
 
 ## Contributors
