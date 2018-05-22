@@ -22,6 +22,13 @@ const srcPath = path.resolve('../src/');
 const tmpPath = path.resolve('./tmp/');
 const versionUrl = 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win';
 
+if (!fs.existsSync(artifactsPath)) {
+  fs.mkdirSync(artifactsPath);
+}
+if (!fs.existsSync(tmpPath)) {
+  fs.mkdirSync(tmpPath);
+}
+
 console.log(`| Variable         | Value`);
 console.log(`|------------------|-----------------------------`);
 console.log(`| artifactsPath    | ${artifactsPath}`);
