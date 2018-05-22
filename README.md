@@ -5,31 +5,21 @@
 > Never forget another password  
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
-| Component                                            | Package                                               | Installation             |
-|:----------------------------------------------------:|:-----------------------------------------------------:|:-------------------------|
-| [dashlane](https://chocolatey.org/packages/dashlane) | ![](https://img.shields.io/chocolatey/v/dashlane.svg) | `choco install dashlane` |
+|                       Component                          |                              Package                                           | Installation                                                                 |
+|:--------------------------------------------------------:|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------|
+| https://chocolatey.org/packages/dashlane                 | <img src="https://img.shields.io/chocolatey/v/dashlane.svg" alt="" />          | `choco install dashlane`                                                     |
+| https://myget.org/feed/dittodhole/package/nuget/dashlane | <img src="https://img.shields.io/myget/dittodhole/vpre/dashlane.svg" alt="" /> | `choco install dashlane -pre --source https://myget.org/F/dittodhole/api/v2` |
 
-## Developing
+## Developing & Building
 
 ```cmd
 > git clone https://github.com/dittodhole/chocolatey-dashlane.git
 > cd chocolatey-dashlane/
+chocolatey-dashlane> cd build
+chocolatey-dashlane/build> npm run-script build
 ```
 
-### Building & Publishing
-
-```cmd
-chocolatey-dashlane> npm run-script build
-chocolatey-dashlane> npm run-script publish
-```
-
-To solely fetch the new version, run:
-
-```cmd
-chocolatey-dashlane> npm run-script prebuild
-```
-
-This will create a `dashlane.*.nupkg` in the root folder.
+This will create `chocolatey-dashlane/artifacts/dashlane.{version}.nupkg`.
 
 ## Contributors
 
