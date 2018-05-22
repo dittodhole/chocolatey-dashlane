@@ -1,4 +1,5 @@
 artifacts/*.nupkg
 build/node_modules/
+build/tmp/
 src/dashlane.nuspec
 src/tools/chocolateyinstall.ps1
