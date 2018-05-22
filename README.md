@@ -20,6 +20,7 @@
 
 ```cmd
 chocolatey-dashlane> npm run-script build
+chocolatey-dashlane> npm run-script publish
 ```
 
 To solely fetch the new version, run:
@@ -27,6 +28,8 @@ To solely fetch the new version, run:
 ```cmd
 chocolatey-dashlane> npm run-script prebuild
 ```
+
+This will create a `dashlane.*.nupkg` in the root folder.
 
 ## Contributors
 
