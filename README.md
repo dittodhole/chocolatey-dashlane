@@ -16,6 +16,7 @@
 > git clone https://github.com/dittodhole/chocolatey-dashlane.git
 > cd chocolatey-dashlane/
 chocolatey-dashlane> cd build
+chocolatey-dashlane/build> npm install
 chocolatey-dashlane/build> npm run-script build
 ```
 
