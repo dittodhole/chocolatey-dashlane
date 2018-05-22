@@ -6,7 +6,7 @@
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
 | Hosting                                                               | Version                                                                                                                    | Installation                                                                 |
-|:---------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------|
+|:----------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------|
 | [chocolatey.org](https://chocolatey.org/packages/dashlane)            | [![](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane)                          | `choco install dashlane`                                                     |
 | [myget.org](https://myget.org/feed/dittodhole/package/nuget/dashlane) | [![](https://img.shields.io/myget/dittodhole/vpre/dashlane.svg)](https://myget.org/feed/dittodhole/package/nuget/dashlane) | `choco install dashlane -pre --source https://myget.org/F/dittodhole/api/v2` |
 
