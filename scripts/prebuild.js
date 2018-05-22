@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const request = require('request');
 const JSONStream = require('JSONStream');
@@ -16,9 +16,6 @@ const jsonStream = JSONStream
       const hash = crypto.createHash('sha1');
       const setupPath = path.resolve(path.basename(location));
       const writeStream = fs.createWriteStream(setupPath)
-        .on('data', (data) => {
-          hash.update(data);
-        })
         .on('close', () => {
           const versionInfo = winVersionInfo(setupPath);
           const replacements = {
@@ -61,7 +58,14 @@ const jsonStream = JSONStream
       console.log(`Downloading '${location}' to '${setupPath}'.`);
       request
         .get(location)
-        .pipe(writeStream);
+        .on('data', (data) => {
+          hash.update(data);
+        })
+        .pipe(writeStream)
+        .on('data', (data) => {
+          console.log(data);
+          hash.update(data);
+        });
     } else {
       throw 'Could not determine download location!';
     }
