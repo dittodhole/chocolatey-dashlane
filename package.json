@@ -1,0 +1,28 @@
+{
+  "name": "chocolatey-dashlane",
+  "version": "5.12.0-19744",
+  "description": "Never forget another password\nNever misplaced. Never forgotten. Dashlane securely remembers all of your passwords.",
+  "dependencies": {},
+  "devDependencies": {
+    "all-contributors-cli": "^4.11.1"
+  },
+  "scripts": {
+    "contributors:init": "all-contributors init",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "build": "npm run-script build:package",
+    "build:package": "choco pack",
+    "deploy": "npm run-script deploy:package",
+    "deploy:package": "choco push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dittodhole/chocolatey-dashlane.git"
+  },
+  "author": "Andreas Niedermair (@dittodhole)",
+  "license": "SEE LICENSE IN https://github.com/dittodhole/WTFNMFPLv3",
+  "bugs": {
+    "url": "https://github.com/dittodhole/chocolatey-dashlane/issues"
+  },
+  "homepage": "https://github.com/dittodhole/chocolatey-dashlane#readme"
+}

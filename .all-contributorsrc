@@ -1,0 +1,23 @@
+{
+  "projectName": "chocolatey-dashlane",
+  "projectOwner": "Andreas Niedermair (@dittodhole)",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 250,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "bcurran3",
+      "name": "bcurran3",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14026600?v=4",
+      "profile": "https://github.com/bcurran3",
+      "contributions": [
+        "ideas",
+        "example"
+      ]
+    }
+  ]
+}
