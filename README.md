@@ -6,7 +6,7 @@
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
 | Component                                            | Package                                                                                                  | Installation
-|:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------:|:-------------------------|
+|:----------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|:-------------------------|
 | [dashlane](https://chocolatey.org/packages/dashlane) | [![](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane)        | `choco install dashlane` |
 
 ## Developing
