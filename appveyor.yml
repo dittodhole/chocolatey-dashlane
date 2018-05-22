@@ -9,6 +9,7 @@ only_commits:
   files:
     - build/*
     - src/*
+    - appveyor.yml
 before_build:
 - cmd: cd build
 - cmd: npm install
@@ -16,7 +17,7 @@ build_script:
 - cmd: npm run-script build
 test: off
 artifacts:
-- path: artifacts\*.nupkg
+- path: artifacts/*.nupkg
   name: nupkg
   type: File
 nuget:
