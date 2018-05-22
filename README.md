@@ -18,8 +18,8 @@
 
 When forging a new release, following properties need to be adjusted:
 
-- [package.json](package.json) - `version`
-- [dashlane.nuspec](dashlane.nuspec) - `package\metadata\version`
+- [package.json](package.json) - `/version`
+- [dashlane.nuspec](dashlane.nuspec) - `/package/metadata/version`
 - [tools/chocolateyinstall.ps1](tools/chocolateyinstall.ps1) - `$url` and `$checksum`
 
 ### Building
