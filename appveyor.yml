@@ -1,6 +1,10 @@
 version: '{build}'
 image: Visual Studio 2017
 skip_tags: true
+branches:
+  only:
+    - master
+    - develop
 before_build:
 - cmd: cd build
 - cmd: npm install
@@ -15,12 +19,14 @@ nuget:
   account_feed: true
   project_feed: true
 deploy:
-#- provider: NuGet
-#  name: Chocolatey
-#  server: https://push.chocolatey.org/
-#  api_key:
-#    secure: +fTRQpSd17emUj2c3ZNEMkulTNDn30de0EEGJ0vP/rA6dWVsazPUgRG/zEps0Xmh
-#  artifact: nupkg
+- provider: NuGet
+  name: Chocolatey
+  server: https://push.chocolatey.org/
+  api_key:
+    secure: +fTRQpSd17emUj2c3ZNEMkulTNDn30de0EEGJ0vP/rA6dWVsazPUgRG/zEps0Xmh
+  artifact: nupkg
+  on:
+    branch: master
 - provider: NuGet
   name: MyGet
   server: https://www.myget.org/F/dittodhole/api/v2/package
