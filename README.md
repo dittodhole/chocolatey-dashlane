@@ -35,7 +35,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/14026600?v=4" width="250px;"/><br /><sub><b>bcurran3</b></sub>](https://github.com/bcurran3)<br />[🤔](#ideas-bcurran3 "Ideas, Planning, & Feedback") [💡](#example-bcurran3 "Examples") |
+| [<img src="https://avatars2.githubusercontent.com/u/14026600?v=4" width="100px;"/><br /><sub><b>bcurran3</b></sub>](https://github.com/bcurran3)<br />[🤔](#ideas-bcurran3 "Ideas, Planning, & Feedback") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

@@ -6,7 +6,7 @@
   "files": [
     "README.md"
   ],
-  "imageSize": 250,
+  "imageSize": 100,
   "commit": true,
   "contributors": [
     {
@@ -15,8 +15,7 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/14026600?v=4",
       "profile": "https://github.com/bcurran3",
       "contributions": [
-        "ideas",
-        "example"
+        "ideas"
       ]
     }
   ]
