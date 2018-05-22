@@ -16,13 +16,6 @@
 > cd chocolatey-dashlane/
 ```
 
-Open [dashlane.nuspec](dashlane.nuspec) with the editor of your choice, to edit the package definition.
-
-The actual (un)installation is done in *.ps1*-files:
-
-- [tools/chocolateyinstall.ps1](tools/chocolateyinstall.ps1)
-- [tools/chocolateyuninstall.ps1](tools/chocolateyuninstall.ps1)
-
 When forging a new release, following properties need to be adjusted:
 
 - [package.json](package.json) - `version`
