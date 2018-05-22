@@ -3,13 +3,13 @@
   <metadata>
     <id>dashlane</id>
     <title>dashlane</title>
-    <version>5.8.0.17084</version>
+    <version>5.12.0.19744</version>
     <authors>dashlane</authors>
     <owners>dittodhole</owners>
     <description>Never forget another password
 Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.</description>
     <summary>Dashlane is a password manager app and secure digital wallet.</summary>
-    <iconUrl>https://raw.githubusercontent.com/dittodhole/chocolatey-dashlane/master/assets/icon256.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/dittodhole/chocolatey-dashlane/master/assets/icon256.png</iconUrl>
     <packageSourceUrl>https://github.com/dittodhole/chocolatey-dashlane</packageSourceUrl>
     <bugTrackerUrl>https://github.com/dittodhole/chocolatey-dashlane/issues</bugTrackerUrl>
     <projectUrl>https://www.dashlane.com/</projectUrl>
