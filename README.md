@@ -1,14 +1,19 @@
 ![](assets/icon256.png)
 
 # chocolatey-dashlane
+
+| Component                                             | Package                                                      |
+|-------------------------------------------------------|--------------------------------------------------------------|
+| [dashlane] (https://chocolatey.org/packages/dashlane) | ![package](https://img.shields.io/chocolatey/v/dashlane.svg) |
+
 > Never forget another password  
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
 ## Installation
 
- [![Chocolatey](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane) https://chocolatey.org/packages/dashlane
-
-    > choco install dashlane
+```cmd
+> choco install dashlane
+```
 
 ## Developing
 
@@ -21,9 +26,10 @@ The actual (un)installation is done in *.ps1*-files:
 
 ### Publishing
 
-    > choco pack
-    > choco push
-
+```cmd
+> choco pack
+> choco push
+```
 
 ## License
 
