@@ -21,8 +21,8 @@ The actual (un)installation is done in *.ps1*-files:
 ### Publishing
 
 ```cmd
-> choco pack
-> choco push
+> npm run-script build
+> npm run-script deploy
 ```
 
 ## License
