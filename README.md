@@ -5,10 +5,10 @@
 > Never forget another password  
 > Never misplaced. Never forgotten. Dashlane securely remembers all of your passwords.
 
-|                       Component                          |                              Package                                           | Installation                                                                 |
-|:--------------------------------------------------------:|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------|
-| https://chocolatey.org/packages/dashlane                 | <img src="https://img.shields.io/chocolatey/v/dashlane.svg" alt="" />          | `choco install dashlane`                                                     |
-| https://myget.org/feed/dittodhole/package/nuget/dashlane | <img src="https://img.shields.io/myget/dittodhole/vpre/dashlane.svg" alt="" /> | `choco install dashlane -pre --source https://myget.org/F/dittodhole/api/v2` |
+| Component                                                            | Package                                                                                                                    | Installation                                                                 |
+|:--------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------|
+| [dashlane](https://chocolatey.org/packages/dashlane)                 | [![](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane)                          | `choco install dashlane`                                                     |
+| [dashlane](https://myget.org/feed/dittodhole/package/nuget/dashlane) | [![](https://img.shields.io/myget/dittodhole/vpre/dashlane.svg)](https://myget.org/feed/dittodhole/package/nuget/dashlane) | `choco install dashlane -pre --source https://myget.org/F/dittodhole/api/v2` |
 
 ## Developing & Building
 
