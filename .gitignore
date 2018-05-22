@@ -1,5 +1,4 @@
 artifacts/*.nupkg
 build/node_modules/
-build/package-lock.json
 src/dashlane.nuspec
 src/tools/chocolateyinstall.ps1
