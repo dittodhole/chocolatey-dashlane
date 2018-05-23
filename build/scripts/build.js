@@ -61,7 +61,7 @@ const jsonStream = JSONStream
           const branch = process.env.APPVEYOR_REPO_BRANCH;
           if (branch === 'master') {
             version = versionInfo.FileVersion;
-          } else {
+          } else if (branch) {
             let identifiers;
             const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
             if (buildNumber) {
@@ -71,6 +71,8 @@ const jsonStream = JSONStream
             }
 
             version = `${major}.${minor}.${build}-${identifiers}`;
+          } else {
+            version = versionInfo.FileVersion;
           }
 
           const replacements = {
