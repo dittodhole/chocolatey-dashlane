@@ -22,6 +22,8 @@ const rootPath = path.resolve('../');
 const srcPath = path.resolve('../src/');
 const tmpPath = path.resolve('./tmp/');
 const versionUrl = 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win';
+const branch = process.env.APPVEYOR_REPO_BRANCH;
+const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
 
 if (!fs.existsSync(artifactsPath)) {
   fs.mkdirSync(artifactsPath);
@@ -39,6 +41,9 @@ console.log(`| rootPath         | ${rootPath}`);
 console.log(`| srcPath          | ${srcPath}`);
 console.log(`| tmpPath          | ${tmpPath}`);
 console.log(`| versionUrl       | ${versionUrl}`);
+console.log(`|------------------|-----------------------------`);
+console.log(`| branch           | ${branch}`);
+console.log(`| buildNumber      | ${buildNumber}`);
 console.log(`|------------------|-----------------------------`);
 console.log();
 
@@ -58,12 +63,10 @@ const jsonStream = JSONStream
           const revision = +versionParts[3];
 
           let version;
-          const branch = process.env.APPVEYOR_REPO_BRANCH;
           if (branch === 'master') {
             version = versionInfo.FileVersion;
           } else if (branch) {
             let identifiers;
-            const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
             if (buildNumber) {
               identifiers = `unstable${buildNumber.padStart(4, '0')}-${revision}`;
             } else {
