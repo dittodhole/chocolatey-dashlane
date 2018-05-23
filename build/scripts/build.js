@@ -52,26 +52,25 @@ const jsonStream = JSONStream
       const writeStream = fs.createWriteStream(setupPath)
         .on('close', () => {
           const versionInfo = winVersionInfo(setupPath);
+          const versionParts = versionInfo.FileVersion.split('.');
+          const major = +versionParts[0];
+          const minor = +versionParts[1];
+          const build = +versionParts[2];
+          const revision = +versionParts[3];
 
           let version;
           const branch = gitBranch.sync(rootPath);
           if (branch === 'master') {
             version = versionInfo.FileVersion;
           } else {
-            const versionParts = versionInfo.FileVersion.split('.');
-
             let identifiers;
             const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
             if (buildNumber) {
-              identifiers = `unstable${buildNumber}`;
+              identifiers = `unstable${buildNumber.padStart(5, '0')}-${revision}`;
             } else {
-              const revision = +versionParts[3];
-              identifiers  = `${branch}-rc${revision}`;
+              identifiers  = `${branch}-${revision}`;
             }
 
-            const major = +versionParts[0];
-            const minor = +versionParts[1];
-            const build = +versionParts[2];
             version = `${major}.${minor}.${build}-${identifiers}`;
           }
 
