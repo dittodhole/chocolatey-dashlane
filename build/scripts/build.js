@@ -66,7 +66,7 @@ const jsonStream = JSONStream
             let identifiers;
             const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
             if (buildNumber) {
-              identifiers = `unstable${buildNumber.padStart(5, '0')}-${revision}`;
+              identifiers = `unstable${buildNumber.padStart(4, '0')}-${revision}`;
             } else {
               identifiers  = `${branch}-${revision}`;
             }
