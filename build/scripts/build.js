@@ -12,12 +12,14 @@ const nugetRunner = require('nuget-runner');
 const choco = nugetRunner({
   nugetPath: 'choco.exe'
 });
+const gitBranch = require('git-branch');
 
 const hash = crypto.createHash('sha1');
 
 const artifactsPath = path.resolve('../artifacts/');
 const buildPath = path.resolve('./');
 const nuspecPath = path.resolve('../src/dashlane.nuspec');
+const rootPath = path.resolve('../');
 const srcPath = path.resolve('../src/');
 const tmpPath = path.resolve('./tmp/');
 const versionUrl = 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win';
@@ -34,6 +36,7 @@ console.log(`|------------------|-----------------------------`);
 console.log(`| artifactsPath    | ${artifactsPath}`);
 console.log(`| buildPath        | ${buildPath}`);
 console.log(`| nuspecPath       | ${nuspecPath}`);
+console.log(`| rootPath         | ${rootPath}`);
 console.log(`| srcPath          | ${srcPath}`);
 console.log(`| tmpPath          | ${tmpPath}`);
 console.log(`| versionUrl       | ${versionUrl}`);
@@ -49,8 +52,31 @@ const jsonStream = JSONStream
       const writeStream = fs.createWriteStream(setupPath)
         .on('close', () => {
           const versionInfo = winVersionInfo(setupPath);
+
+          let version;
+          const branch = gitBranch.sync(rootPath);
+          if (branch === 'master') {
+            version = versionInfo.FileVersion;
+          } else {
+            const versionParts = versionInfo.FileVersion.split('.');
+
+            let identifiers;
+            const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
+            if (buildNumber) {
+              identifiers = `unstable${buildNumber}`;
+            } else {
+              const revision = +versionParts[3];
+              identifiers  = `${branch}-rc${revision}`;
+            }
+
+            const major = +versionParts[0];
+            const minor = +versionParts[1];
+            const build = +versionParts[2];
+            version = `${major}.${minor}.${build}-${identifiers}`;
+          }
+
           const replacements = {
-            '$version$': versionInfo.FileVersion,
+            '$version$': version,
             '$url$': setupUrl,
             '$checksum$': hash.digest('hex')
           };
