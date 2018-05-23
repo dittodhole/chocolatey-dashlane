@@ -78,10 +78,15 @@ const jsonStream = JSONStream
           const replacements = {
             '$version$': version,
             '$url$': setupUrl,
-            '$checksum$': hash.digest('hex')
+            '$checksum$': hash.digest('hex'),
+            '$author$': versionInfo.CompanyName,
+            '$id$': versionInfo.ProductName,
+            '$copyright$': versionInfo.LegalCopyright
           };
 
           winston.info(`Applying replacements ...`);
+          Object.keys(replacements)
+            .forEach(key => winston.info(`${key} = ${replacements[key]}`));
           glob.sync('*.tmpl', {
             cwd: srcPath,
             nocase: true,
