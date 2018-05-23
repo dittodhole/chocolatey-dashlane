@@ -12,7 +12,6 @@ const nugetRunner = require('nuget-runner');
 const choco = nugetRunner({
   nugetPath: 'choco.exe'
 });
-const gitBranch = require('git-branch');
 
 const hash = crypto.createHash('sha1');
 
@@ -59,8 +58,7 @@ const jsonStream = JSONStream
           const revision = +versionParts[3];
 
           let version;
-          const branch = gitBranch.sync(rootPath);
-          console.log(branch);
+          const branch = process.env.APPVEYOR_REPO_BRANCH;
           if (branch === 'master') {
             version = versionInfo.FileVersion;
           } else {
