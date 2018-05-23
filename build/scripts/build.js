@@ -66,8 +66,7 @@ const jsonStream = JSONStream
           if (branch === 'master') {
             version = versionInfo.FileVersion;
           } else if (branch) {
-            const identifiers = `${branch}-${revision}-${buildNumber.padStart(4, '0')}`;
-            version = `${major}.${minor}.${build}-${identifiers}`;
+            version = `${major}.${minor}.${build}-${branch}-${revision}-${buildNumber.padStart(4, '0')}`;
           } else {
             version = versionInfo.FileVersion;
           }
