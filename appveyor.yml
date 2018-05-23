@@ -16,6 +16,7 @@ artifacts:
 - path: artifacts/*.nupkg
   name: nupkg
   type: File
+for:
 -
   branches:
     only:
