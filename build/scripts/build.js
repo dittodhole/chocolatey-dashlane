@@ -8,8 +8,8 @@ const winVersionInfo = require('win-version-info');
 const crypto = require('crypto');
 const glob = require('glob');
 const winston = require('winston');
-const Nuget = require('nuget-runner');
-const nuget = Nuget({
+const nugetRunner = require('nuget-runner');
+const choco = nugetRunner({
   nugetPath: 'choco.exe'
 });
 
@@ -78,7 +78,7 @@ const jsonStream = JSONStream
               fs.writeFileSync(renderPath,
                                content);
             });
-          nuget.pack({
+          choco.pack({
             spec: nuspecPath,
             outputDirectory: artifactsPath
           });
