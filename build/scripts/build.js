@@ -60,6 +60,7 @@ const jsonStream = JSONStream
 
           let version;
           const branch = gitBranch.sync(rootPath);
+          console.log(branch);
           if (branch === 'master') {
             version = versionInfo.FileVersion;
           } else {
