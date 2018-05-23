@@ -3,3 +3,4 @@ build/node_modules/
 build/tmp/
 src/dashlane.nuspec
 src/tools/chocolateyinstall.ps1
+src/tools/chocolateyuninstall.ps1
