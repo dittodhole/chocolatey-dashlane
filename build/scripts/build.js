@@ -15,43 +15,41 @@ const choco = nugetRunner({
 
 const hash = crypto.createHash('sha1');
 
-const artifactsPath = path.resolve('../artifacts/');
-const buildPath = path.resolve('./');
-const nuspecPath = path.resolve('../src/dashlane.nuspec');
-const rootPath = path.resolve('../');
-const srcPath = path.resolve('../src/');
-const tmpPath = path.resolve('./tmp/');
-const versionUrl = 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win';
-const branch = process.env.APPVEYOR_REPO_BRANCH;
-const buildNumber = process.env.APPVEYOR_BUILD_NUMBER;
+winston.clear();
+winston.add(winston.transports.Console, {
+  level: 'silly',
+  prettyPrint: true,
+  colorize: true
+});
 
-if (!fs.existsSync(artifactsPath)) {
-  fs.mkdirSync(artifactsPath);
+const options = {
+  artifactsPath: path.resolve('../artifacts/'),
+  buildPath: path.resolve('./'),
+  nuspecPath: path.resolve('../src/dashlane.nuspec'),
+  rootPath: path.resolve('../'),
+  srcPath: path.resolve('../src/'),
+  tmpPath: path.resolve('./tmp/'),
+  versionUrl: 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win',
+  branch: process.env.APPVEYOR_REPO_BRANCH,
+  buildNumber: process.env.APPVEYOR_BUILD_NUMBER
+};
+
+if (!fs.existsSync(options.artifactsPath)) {
+  winston.info(`Creating '${options.artifactsPath}' ...`);
+  fs.mkdirSync(options.artifactsPath);
 }
-if (!fs.existsSync(tmpPath)) {
-  fs.mkdirSync(tmpPath);
+if (!fs.existsSync(options.tmpPath)) {
+  winston.info(`Creating '${options.tmpPath}' ...`);
+  fs.mkdirSync(options.tmpPath);
 }
 
-console.log(`| Variable         | Value`);
-console.log(`|------------------|-----------------------------`);
-console.log(`| artifactsPath    | ${artifactsPath}`);
-console.log(`| buildPath        | ${buildPath}`);
-console.log(`| nuspecPath       | ${nuspecPath}`);
-console.log(`| rootPath         | ${rootPath}`);
-console.log(`| srcPath          | ${srcPath}`);
-console.log(`| tmpPath          | ${tmpPath}`);
-console.log(`| versionUrl       | ${versionUrl}`);
-console.log(`|------------------|-----------------------------`);
-console.log(`| branch           | ${branch}`);
-console.log(`| buildNumber      | ${buildNumber}`);
-console.log(`|------------------|-----------------------------`);
-console.log();
+winston.debug(options);
 
 const jsonStream = JSONStream
   .parse('content.location')
   .on('data', setupUrl => {
     if (setupUrl) {
-      const setupPath = path.resolve(tmpPath,
+      const setupPath = path.resolve(options.tmpPath,
                                      path.basename(setupUrl));
       const writeStream = fs.createWriteStream(setupPath)
         .on('close', () => {
@@ -63,10 +61,10 @@ const jsonStream = JSONStream
           const revision = +versionParts[3];
 
           let version;
-          if (branch === 'master') {
+          if (options.branch === 'master') {
             version = versionInfo.FileVersion;
-          } else if (branch) {
-            version = `${major}.${minor}.${build}-${branch}-${revision}-${buildNumber.padStart(4, '0')}`;
+          } else if (options.branch) {
+            version = `${major}.${minor}.${build}-${options.branch}-${revision}-${buildNumber.padStart(4, '0')}`;
           } else {
             version = versionInfo.FileVersion;
           }
@@ -76,15 +74,15 @@ const jsonStream = JSONStream
             '$url$': setupUrl,
             '$checksum$': hash.digest('hex'),
             '$author$': versionInfo.CompanyName,
-            '$id$': versionInfo.ProductName,
+            '$id$': versionInfo.ProductName.toLowerCase(),
+            '$title$': versionInfo.ProductName,
             '$copyright$': versionInfo.LegalCopyright
           };
 
           winston.info(`Applying replacements ...`);
-          Object.keys(replacements)
-            .forEach(key => winston.info(`${key} = ${replacements[key]}`));
+          winston.debug(replacements);
           glob.sync('*.tmpl', {
-            cwd: srcPath,
+            cwd: options.srcPath,
             nocase: true,
             matchBase: true,
             absolute: true
@@ -92,7 +90,7 @@ const jsonStream = JSONStream
             .forEach((templatePath) => {
               const renderPath = path.resolve(path.dirname(templatePath),
                                               path.basename(templatePath, path.extname(templatePath)));
-              winston.info(`${templatePath} ...`);
+              winston.info(`'${templatePath}' ...`);
               const content = Object.keys(replacements)
                 .reduce((accumulator, key) => {
                   const value = replacements[key];
@@ -106,8 +104,8 @@ const jsonStream = JSONStream
                                content);
             });
           choco.pack({
-            spec: nuspecPath,
-            outputDirectory: artifactsPath
+            spec: options.nuspecPath,
+            outputDirectory: options.artifactsPath
           });
         });
 
@@ -125,5 +123,5 @@ const jsonStream = JSONStream
 
 winston.info(`Downloading version information ...`);
 request
-  .get(versionUrl)
+  .get(options.versionUrl)
   .pipe(jsonStream);
