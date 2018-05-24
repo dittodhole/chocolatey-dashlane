@@ -1,11 +1,10 @@
 version: '{build}'
 image: Visual Studio 2017
 skip_tags: true
-only_commits:
+skip_commits:
   files:
-    - build/
-    - src/
-    - appveyor.yml
+    - '**/*.md'
+    - .gitignore
 before_build:
 - cmd: cd build
 - cmd: npm install
