@@ -7,21 +7,21 @@
 
 ## Installing
 
-### [myget.org](https://www.myget.org/feed/dittodhole/package/nuget/dashlane)
+### [myget.org][1]
 
-[![](https://img.shields.io/appveyor/ci/dittodhole/chocolatey-dashlane/develop.svg)](https://ci.appveyor.com/project/dittodhole/chocolatey-dashlane/branch/develop)
-[![](https://img.shields.io/myget/dittodhole/vpre/dashlane.svg)](https://www.myget.org/feed/dittodhole/package/nuget/dashlane)
+[![](https://img.shields.io/appveyor/ci/dittodhole/chocolatey-dashlane/develop.svg)][2]
+[![](https://img.shields.io/myget/dittodhole/vpre/dashlane.svg)][1]
 
-```powershell
+```cmd
 choco install dashlane --pre --source https://www.myget.org/F/dittodhole/api/v2
 ```
 
-### [chocolatey.org](https://chocolatey.org/packages/dashlane)
+### [chocolatey.org][3]
 
-[![](https://img.shields.io/appveyor/ci/dittodhole/chocolatey-dashlane/master.svg)](https://ci.appveyor.com/project/dittodhole/chocolatey-dashlane/branch/master)
-[![](https://img.shields.io/chocolatey/v/dashlane.svg)](https://chocolatey.org/packages/dashlane)
+[![](https://img.shields.io/appveyor/ci/dittodhole/chocolatey-dashlane/master.svg)][4]
+[![](https://img.shields.io/chocolatey/v/dashlane.svg)][3]
 
-```powershell
+```cmd
 choco install dashlane
 ```
 
@@ -52,3 +52,8 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 ## License
 
 chocolatey-dashlane is published under [WTFNMFPLv3](https://github.com/dittodhole/WTFNMFPLv3).
+
+[1]: https://www.myget.org/feed/dittodhole/package/nuget/dashlane
+[2]: https://ci.appveyor.com/project/dittodhole/chocolatey-dashlane/branch/develop
+[3]: https://chocolatey.org/packages/dashlane
+[4]: https://ci.appveyor.com/project/dittodhole/chocolatey-dashlane/branch/master
