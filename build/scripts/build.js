@@ -74,7 +74,7 @@ const jsonStream = JSONStream
             '$url$': setupUrl,
             '$checksum$': hash.digest('hex'),
             '$author$': versionInfo.CompanyName,
-            '$id$': versionInfo.ProductName.toLowerCase(),
+            '$id$': 'dashlane',
             '$title$': versionInfo.ProductName,
             '$copyright$': versionInfo.LegalCopyright,
             '$branch$': options.branch
