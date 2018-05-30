@@ -95,7 +95,7 @@ const jsonStream = JSONStream
               const content = Object.keys(replacements)
                 .reduce((accumulator, key) => {
                   const value = replacements[key];
-                  accumulator = accumulator.replace(key, value);
+                  accumulator = accumulator.split(key).join(value);
                   return accumulator;
                 }, fs.readFileSync(templatePath, {
                   encoding: 'utf8'
