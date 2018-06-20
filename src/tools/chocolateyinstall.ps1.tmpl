@@ -1,22 +1,28 @@
-﻿$packageName = '$id$'
-$installerType = 'exe'
-$silentArgs = '/SD'
-$url = '$url$'
-$checksum = '$checksum$'
-$checksumType = 'sha1'
-$validExitCodes = @(0,1223)
+﻿$ErrorActionPreference = "Stop";
 
-Install-ChocolateyPackage -PackageName "$packageName" `
-                          -FileType "$installerType" `
-                          -SilentArgs "$silentArgs" `
-                          -Url "$url" `
-                          -ValidExitCodes $validExitCodes `
-                          -Checksum "$checksum" `
-                          -ChecksumType "$checksumType"
+$packageArgs = @{
+  packageName = $env:ChocolateyPackageName
+  softwareName = "$id$*"
+  fileType = "exe"
+  silentArgs = "/SD"
+  url = "$url$"
+  validExitCodes = @(0,1223)
+  checksum = "$checksum$"
+  checksumType = "sha1"
+};
+
+Install-ChocolateyPackage @packageArgs
+
+$installLocation = Get-AppInstallLocation $packageArgs.softwareName
+if ($installLocation) {
+  Write-Host "$packageName installed to '$installLocation'"
+} else {
+  Write-Warning "Can't find install location"
+}
 
 Start-Sleep -Seconds 20
 
-Get-Process -Name "Dashlane*" | foreach {
+Get-Process -Name $packageArgs.softwareName | foreach {
   Write-Host "Stopping $($_.ProcessName) process ($($_.Id)) ..."
   Stop-Process $_
 }
