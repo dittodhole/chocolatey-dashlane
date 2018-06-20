@@ -2,7 +2,6 @@
 
 $packageArgs = @{
   packageName = $env:ChocolateyPackageName
-  softwareName = "$id$*"
   fileType = "exe"
   silentArgs = "/SD"
   url = "$url$"
@@ -13,7 +12,7 @@ $packageArgs = @{
 
 Install-ChocolateyPackage @packageArgs
 
-$installLocation = Get-AppInstallLocation $packageArgs.softwareName
+$installLocation = Get-AppInstallLocation "dashlane*"
 if ($installLocation) {
   Write-Host "$packageName installed to '$installLocation'"
 } else {
@@ -22,7 +21,7 @@ if ($installLocation) {
 
 Start-Sleep -Seconds 20
 
-Get-Process -Name $packageArgs.softwareName | foreach {
+Get-Process -Name "dashlane*" | % {
   Write-Host "Stopping $($_.ProcessName) process ($($_.Id)) ..."
   Stop-Process $_
 }
