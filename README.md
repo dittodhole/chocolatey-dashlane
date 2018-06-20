@@ -35,7 +35,9 @@ chocolatey-dashlane/build> npm install
 chocolatey-dashlane/build> npm run-script build
 ```
 
-This will create `chocolatey-dashlane/artifacts/dashlane.{version}.nupkg`.
+This will create the following artifacts:
+
+- `artifacts/dashlane.{version}.nupkg`
 
 ## Contributors
 
