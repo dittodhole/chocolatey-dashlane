@@ -29,7 +29,7 @@ const options = {
   rootPath: path.resolve('../'),
   srcPath: path.resolve('../src/'),
   tmpPath: path.resolve('./tmp/'),
-  versionUrl: 'https://dashlane.com/5/binaries/query?platform=website&target=launcher_win',
+  versionUrl: 'https://ws1.dashlane.com/5/binaries/query?platform=website&target=launcher_win',
   branch: process.env.APPVEYOR_REPO_BRANCH,
   buildNumber: process.env.APPVEYOR_BUILD_NUMBER
 };
